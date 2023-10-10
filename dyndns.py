@@ -15,9 +15,12 @@ def getIp(ipService):
 def updateDynDns(updateUrl,ipAddress,dynDnsHostName,username,password):
     updateUrl = updateUrl.replace("<dynDnsHostName>",dynDnsHostName).replace("<username>",username).replace("<password>",password).replace("<ipAddress>",str(ipAddress)).replace("\n","").replace(" ","")
     updateResponse = requests.get(updateUrl).text
-    if "good" or "nochg" in updateResponse:
-        print("Update successful: " + updateResponse)
-    else:
+    successful = False
+    for message in successMessage:
+        if message in updateResponse:
+            print("Update successful: " + updateResponse)
+            successful = True
+    if successful != True:
         print("Update unsuccessful: " + updateResponse)
 
 if __name__ == "__main__":

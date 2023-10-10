@@ -18,7 +18,7 @@ password = "yourPassword"
 
 
 
-# Define your Update-String. Allowed variables:
+# Define your updateUrl. Allowed variables:
 # - <dynDnsHostName>
 # - <username>
 # - <password>
@@ -29,6 +29,8 @@ password = "yourPassword"
 # Which results in the following updateUrl:
 # https://infomaniak.com/nic/update?hostname=<dynDnsHostName>&myip=<ipAddress>&username=<username>&password=<password>
 updateUrl = "https://infomaniak.com/nic/update?hostname=<dynDnsHostName>&myip=<ipAddress>&username=<username>&password=<password>"
+
+
 
 # successMessage is a list containing one or more strings that are expected to be returned by the dyndns service in case of a successful update. 
 successMessage = ["good","nochg"]

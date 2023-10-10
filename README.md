@@ -24,6 +24,8 @@ Copy the config.py.dist file and enter the following information:
 - dynDnsHostName: Your DynDNS hostname.
 - username: Your DynDNS username.
 - password: Your DynDNS password.
+- successMessage: a list containing one or more strings that are expected to be returned by the dyndns service in case of a successful update. 
+
 
 Save the config.py file after making the necessary changes.
 

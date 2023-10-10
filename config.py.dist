@@ -1,0 +1,32 @@
+# IP Service, which should only return IP. You could add v6 and v4. Some examples. 
+# https://ifconfig.co/ip
+# https://api.ipify.org/
+# http://ifconfig.me/ip
+# http://ipinfo.io/ip
+# https://ipv4.icanhazip.com
+# https://ipv6.icanhazip.com/
+
+ipv6Service = "https://ipv6.icanhazip.com"
+ipv4Service = "https://ipv4.icanhazip.com"
+
+# Hostname on your DynDns Service, which should be updated
+dynDnsHostName = "dyndnshost.yourdomain.com"
+# Username
+username = "yourUser"
+# Password
+password = "yourPassword"
+
+
+
+# Define your Update-String. Allowed variables:
+# - <dynDnsHostName>
+# - <username>
+# - <password>
+# - <ipAddress>
+# The String depends on your dyndns Provider. Example for informaniak.com:
+# https://infomaniak.com/nic/update?hostname=subdomain.yourdomain.com&myip=1.2.3.4&username=XXX&password=XXX
+
+# Which results in the following updateUrl:
+# https://infomaniak.com/nic/update?hostname=<dynDnsHostName>&myip=<ipAddress>&username=<username>&password=<password>
+
+updateUrl = "https://infomaniak.com/nic/update?hostname=<dynDnsHostName>&myip=<ipAddress>&username=<username>&password=<password>"

@@ -16,7 +16,7 @@ Before using the script, ensure you have the following prerequisites:
 
 ## Configuration
 To configure the script, follow these steps:
-Copy the config.py.dist file and enter the following information:
+Copy the config.py.dist file to config.py and enter the following information:
 
 - ipv6Service: The URL of the IPv6 IP service (optional if you don't need IPv6 support).
 - ipv4Service: The URL of the IPv4 IP service.

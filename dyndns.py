@@ -1,6 +1,18 @@
 import requests
 from config import *
+import logging
+from logging.handlers import RotatingFileHandler
 
+
+def initiateLogger():
+    logging.basicConfig(
+        handlers=[RotatingFileHandler('/tmp/dyndns.log', maxBytes=100000, backupCount=2)],
+        level=logging.DEBUG,   # Set the logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    )
+
+    # Create a logger
+    logger = logging.getLogger('dyndns-updater')
 def main():
     if "ipv6Service" in globals():
         ipv6 = getIp(ipv6Service)
@@ -18,10 +30,11 @@ def updateDynDns(updateUrl,ipAddress,dynDnsHostName,username,password):
     successful = False
     for message in successMessage:
         if message in updateResponse:
-            print("Update successful: " + updateResponse)
+            logging.info("Update successful: " + updateResponse)
             successful = True
     if successful != True:
-        print("Update unsuccessful: " + updateResponse)
+        logging.error("Update unsuccessful: " + updateResponse)
 
 if __name__ == "__main__":
+    initiateLogger()
     main()

@@ -7,9 +7,9 @@ As my router is not performing Dynamic DNS (DynDNS) Updates as it should, I've e
 Before using the script, ensure you have the following prerequisites:
 
 - Python 3.x installed on your system.
-- The `requests` library installed. You can install it using pip:
+- - requirements.txt must be installed. You can install it using pip:
   ```bash
-  pip install requests
+  pip install -r requirements.txt
   ````
 - Access to a DynDNS service provider that supports updates via HTTP requests.
 - Your DynDNS hostname, username, and password from your service provider.
